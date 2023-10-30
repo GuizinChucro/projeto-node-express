@@ -5,6 +5,11 @@ const app = express()
 
 const caminhoBase = path.join(__dirname, "templates")
 
+app.get('/usuarios', (requisicao, resposta) => {
+    resposta.sendFile(`${caminhoBase}/usuarios.html`)   
+    const id = requisicao.params.id
+})
+
 app.get('/', (requisicao, resposta) => {
     resposta.sendFile(`${caminhoBase}/index.html`)
 })
